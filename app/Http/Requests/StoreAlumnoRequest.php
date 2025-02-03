@@ -22,26 +22,26 @@ class StoreAlumnoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "nombre"=>"required|string|min:5",
-            "email"=>"required|email|unique:alumnos,email",
-            "dni"=>[
+            "nombre" => "required|string|min:5",
+            "email" => "required|email|unique:alumnos,email",
+            "dni" => [
                 "required",
                 "regex:/^[0-9]{8}-[a-Z]$/",
-                ],
-            "f_nac"=>"required|date|before:today",
+            ],
+            "f_nac" => "required|date|before:today",
             //
         ];
     }
 
-    public function messages(): array{
+    public function messages(): array
+    {
         return [
-            "nombre.required"=>"El nombre es requerido",
-            "nombre.min"=>"El nombre debe tener al menos 5 caracteres",
-            "email.required"=>"El email es requerido",
-            "email.unique"=>"El email ya esta registrado",
-            "dni.regex"=>"El DNI debe tener al menos 8 caracteres guión y letra",
-            "f_nac.required"=>"La fecha de nacimiento es requerida",
-
-        ]
+            "nombre.required" => "El nombre es requerido",
+            "nombre.min" => "El nombre debe tener al menos 5 caracteres",
+            "email.required" => "El email es requerido",
+            "email.unique" => "El email ya esta registrado",
+            "dni.regex" => "El DNI debe tener al menos 8 caracteres guión y letra",
+            "f_nac.required" => "La fecha de nacimiento es requerida"
+        ];
     }
 }
