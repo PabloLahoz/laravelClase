@@ -1,7 +1,8 @@
 <x-layouts.layout>
     <div class="flex flex-row justify-center items-center min-h-full bg-gray-300">
         <!-- Session Status -->
-        <form action="">
+        <form action="{{route("alumnos.store")}}" method="POST">
+            @csrf
             <div class="bg-white rounded-2xl p-5">
                 <div>
                     <x-input-label for="name" value="Nombre"/>
@@ -25,7 +26,7 @@
                     <x-input-label for="dni" value="DNI"/>
                     <x-text-input id="dni" class="block mt-1 w-full"
                                   type="text" name="dni"
-                                  required autofocus autocomplete="username"/>
+                                  required autofocus autocomplete="Dni"/>
                 </div>
                 <div class="p-2">
             <button class= "btn btn-sm btn-success"  type="submit">Guardar </button>
