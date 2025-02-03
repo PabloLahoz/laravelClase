@@ -26,7 +26,7 @@ class StoreAlumnoRequest extends FormRequest
             "email" => "required|email|unique:alumnos,email",
             "dni" => [
                 "required",
-                "regex:/^[0-9]{8}-[a-Z]$/",
+                "regex:/^[0-9]{8}-[A-Z]$/",
             ],
             "f_nac" => "required|date|before:today",
             //
@@ -41,7 +41,9 @@ class StoreAlumnoRequest extends FormRequest
             "email.required" => "El email es requerido",
             "email.unique" => "El email ya esta registrado",
             "dni.regex" => "El DNI debe tener al menos 8 caracteres guión y letra",
-            "f_nac.required" => "La fecha de nacimiento es requerida"
+            "f_nac.required" => "La fecha de nacimiento es requerida",
+            "f_nac.before" => "La fecha no puede ser posterior a la fecha actual"
+
         ];
     }
 }

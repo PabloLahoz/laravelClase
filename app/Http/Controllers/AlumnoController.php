@@ -40,8 +40,10 @@ class AlumnoController extends Controller
     {
         $datos = $request->input();
         $alumno = new Alumno($datos);
-        info($alumno);
+
         $alumno->save();
+        session()->flash("mensaje","Alumno $alumno->nombre registrado");
+
         return redirect()->route('alumnos.index');
         //
     }
