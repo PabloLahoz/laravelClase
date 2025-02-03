@@ -1,5 +1,9 @@
 <x-layouts.layout>
-    <div class="min-h-full overflow-x-auto">
+    <div class="p-2 bg-gray-200">
+        <a class="btn btn-sm btn-secondary " href="{{route("alumnos.create")}}">Crear alumno</a>
+        <a class="btn btn-sm btn-secondary " href="{{route("home")}}">Volver</a>
+    </div>
+    <div class="max-h-full overflow-x-auto">
         <table class="table table-xs table-pin-rows table-pin-cols">
             <thead>
             <tr>

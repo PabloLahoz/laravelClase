@@ -4,6 +4,7 @@ use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+
 Route::resource('alumnos', AlumnoController::class);
 
 Route::get('/index',MainController::class);
