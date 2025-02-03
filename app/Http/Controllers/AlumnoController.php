@@ -61,6 +61,7 @@ class AlumnoController extends Controller
      */
     public function edit(Alumno $alumno)
     {
+        return view('alumnos.edit',compact('alumno'));
         //
     }
 
@@ -69,6 +70,9 @@ class AlumnoController extends Controller
      */
     public function update(UpdateAlumnoRequest $request, Alumno $alumno)
     {
+        $alumno->update($request->input());
+        session()->flash("mensaje","Alumno $alumno->nombre actualizado");
+        return redirect()->route('alumnos.index');
         //
     }
 
@@ -77,6 +81,10 @@ class AlumnoController extends Controller
      */
     public function destroy(Alumno $alumno)
     {
+        $alumno->delete();
+        session()->flash("mensaje","Alumno $alumno->nombre eliminado");
+        return redirect()->route('alumnos.index');
+
         //
     }
 }
