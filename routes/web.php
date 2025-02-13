@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 
+Route::resource("alumnos",AlumnoController::class)->middleware('auth');
 Route::resource('alumnos', AlumnoController::class);
 
 Route::get('/index',MainController::class);
@@ -22,6 +24,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
+Route::get("changeLanguage/{language}", LanguageController::class)->name('language');
 require __DIR__.'/auth.php';
 
