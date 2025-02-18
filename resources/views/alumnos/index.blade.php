@@ -61,6 +61,7 @@
 
 
                     </td>
+                    <td><a href="{{route("alumnos.show", $fila->id)}}"Ver</td>
                 </tr>
 
             @endforeach
